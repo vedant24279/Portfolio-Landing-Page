@@ -3,99 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Porfolio Landing Page</title>
+    <link rel="shortcut icon" href="Pic.jpg" type="image/x-icon">
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* Layout wrapper */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        /* Header & navigation */
+        header {
+            background-color: #111;
+            color: #fff;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.4rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero section */
+        #home {
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20240919/pngtree-a-background-of-orange-blue-and-yellow-gradients-with-gritty-appearance-image_16233934.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        #home h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #home p {
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        #home a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #ffd166;
+            color: #111;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        #home a:hover {
+            background-color: #ffb703;
+        }
+
+        /* Section headings */
+        section h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* About section */
+        figure {
+            margin-bottom: 1rem;
+        }
+
+        figure img {
+            border-radius: 8px;
+            display: block;
+        }
+
+        figure figcaption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.4rem;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Projects section */
+        #project {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        #project h2 {
+            flex-basis: 100%;
+        }
+
+        #project article {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            flex: 1 1 0;
+            min-width: 220px;
+        }
+
+        #project article h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        #project article p {
+            margin: 0.5rem 0 0.75rem;
+        }
+
+        #project article a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #project article a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        /* Contact form */
+        fieldset {
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        legend {
+            padding: 0 0.4rem;
+            font-weight: 600;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            align-self: flex-start;
+            margin-top: 0.5rem;
+            padding: 0.6rem 1.4rem;
+            border: none;
+            border-radius: 999px;
+            background-color: #111;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            #home {
+                padding: 2.5rem 1.5rem;
+            }
+
+            #project {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Product Catalog</h1>
-        <ul>
-            <li><a href="#el">Electronics</a></li>
-            <li><a href="#cl">Clothing</a></li>
-            <li><a href="#hm">Home</a></li>
-        </ul>
-        <section>
-            <h2 id="el">Electronics</h2>
-            <h3>Laptop</h3>
-            <p><strong>Description</strong> : High performance laptop with the latest processor</p>
-            <p><strong>Price</strong> : $999.99</p>
-            <p><strong>Avaibility</strong> : In Stock</p>
-            <img src="pngtree-modern-laptop-computer-with-screen-open-technology-digital-device-png-image_16345445.png" alt="Laptop Image" >
-            <a href="https://www.amazon.in/HP-RyzenTM-15-6-inch-Speakers-15s-fc0155AU/dp/B0CY2R1G3G/ref=s9_acsd_al_bw_cv2_0_0_t?_encoding=UTF8&pf_rd_t=">View Detail</a>
+    <!--This is the header section-->
+    <header>
+        <nav>
+            <h1>Vedant Patel</h1>
             <ul>
-                <li><strong>Brand</strong> : HP</li>
-                <li><strong>Screen Size</strong> : 15.6 Inch</li>
-                <li><strong>Ram</strong> : 16 GB</li>
-                <li><strong>Storage</strong> : 1 TB</li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <h3>Smartphone</h3>
-            <p><strong>Description</strong> : Feature rich smartphone with biggest display</p>
-            <p><strong>Price</strong> : $699.99</p>
-            <p><strong>Avaibility</strong> : Out of Stock</p>
-            <img src="X03EqCvo.webp" alt="Smartphone Image">
-            <a href="https://www.smartprix.com/mobiles/xiaomi-redmi-a4-ppd1jnhjrthe">View Detail</a>
-            <ul>
-                <li><strong>Brand</strong> : Xiaomi</li>
-                <li><strong>Screen Size</strong> : 6.88 Inch</li>
-                <li><strong>Ram</strong> : 8 GB</li>
-                <li><strong>Storage</strong> : 256 GB</li>
-            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--Hero Section-->
+        <section id="home">
+            <h2>Hi, I'm Vedant - Future AI Generalist</h2>
+            <p>Motivated and curious <strong>BCA student</strong> with a strong interest in <strong>Artificial Intelligence</strong>. Currently building a solid foundation in <strong>Python</strong> through practical courses and self-learning. Seeking opportunities to apply and enhance my skills through internships, projects, or freelance roles.</p>
+            <a href="#project">View My Work</a>
         </section>
 
+        <!--This is About Section-->
         <section>
-            <h2 id="cl">Clothing</h2>
-            <h3>Tshirt</h3>
-            <p><strong>Description</strong> : Comfortable Cotton tshirt</p>
-            <p><strong>Price</strong> : $9.99</p>
-            <p><strong>Avaibility</strong> : In Stock</p>
-            <img src="shopping.webp" alt="Tshirt Image">
-            <a href="https://www.amazon.in/Lymio-T-Shirt-Plain-Shirt-L-Rib-T-Maroon-M/dp/B0CB7V5LXJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A1WYWER0W24N8S&psc=1">View Detail</a>
-            <ul>
-                <li><strong>Brand</strong> : H&M</li>
-                <li><strong>Colour</strong> : Marooon</li>
-                <li><strong>Size</strong> : S , M , L</li>
-                <li><strong>Material</strong> : 100% cotton</li>
-            </ul>
-            <h3>Jeans</h3>
-            <p><strong>Description</strong> : Streachable and Comfortable relaxed fit jeans</p>
-            <p><strong>Price</strong> : $15.99</p>
-            <p><strong>Avaibility</strong> : Out of Stock</p>
-            <img src="shopping (1).webp" alt="Jeans Image">
-            <a href="https://www.snitch.com/men-jeans/grunge-blue-bootcut/7465479864482/buy">View Detail</a>
-            <ul>
-                <li><strong>Brand</strong> : Snitch</li>
-                <li><strong>Colour</strong> : Faded light blue</li>
-                <li><strong>Size</strong> : S , M , L</li>
-                <li><strong>Material</strong> : 50% Cotton , 50% Polyester</li>
-            </ul>
+            <h2>About</h2>
+            <figure>
+                <img src="Pic.jpg" alt="VedantImage" width="200" height="200">
+                <figcaption>This is Vedant Patel</figcaption>
+            </figure>
+            <p>I am an introvert who loves coding and learning new things. I see myself as an AI Generalist in the future.</p>
+            <p>This is my favorite song:</p>
+            <video src="Avicii - The Nights.mp4" controls width="500" height="300">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!--This is Project Section-->
+        <section id="project">
+            <h2>Projects</h2>
+
+            <article>
+                <h3>Coffee Machine</h3>
+                <figure>
+                    <img src="Coffee Machine.png" alt="CoffeeMachine" width="300" height="200">
+                    <figcaption>Coffee Machine</figcaption>
+                </figure>
+                <p><strong>Description</strong>: It is a coffee machine which makes 3 types of coffee for customers.</p>
+                <a href="https://github.com/vedant24279/Coffee-Machine">Read more</a>
+            </article>
+
+            <article>
+                <h3>Snake Game</h3>
+                <figure>
+                    <img src="SnakeGame.png" alt="SnakeGame" width="300" height="200">
+                    <figcaption>SnakeGame</figcaption>
+                </figure>
+                <p><strong>Description</strong>: The old Nokia snake game in Python using turtle.</p>
+                <a href="https://github.com/vedant24279/Snake-Game">Read more</a>
+            </article>
+
+            <article>
+                <h3>Pong Game</h3>
+                <figure>
+                    <img src="PongGame.png" alt="PongGame" width="250" height="200">
+                    <figcaption>PongGame</figcaption>
+                </figure>
+                <p><strong>Description</strong>: Pong game in Python using turtle module.</p>
+                <a href="https://github.com/vedant24279/Pong-Game">Read more</a>
+            </article>
         </section>
         
+        <!--This is Skill Table-->
         <section>
-            <h2 id="hm">Home</h2>
-            <h3>Table Lamp</h3>
-            <p><strong>Description</strong> : Modern and Stylist looking table lamp</p>
-            <p><strong>Price</strong> : $199.99</p>
-            <p><strong>Avaibility</strong> : In Stock</p>
-            <img src="shopping (2).webp" alt="Table Lamp Image">
-            <a href="https://www.amazon.in/Homesake-Crystal-Contemporary-Bedroom-Nightstand/dp/B0CK6W443Y?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A2AL6IVND0I91F">View Detail</a>
-            <ul>
-                <li><strong>Brand</strong> : Homesake Store</li>
-                <li><strong>Colour</strong> : White</li>
-                <li><strong>Dimension</strong> : 12 Inch</li>
-                <li><strong>Material</strong> : Metal</li>
-            </ul>
-            <h3>Pillow</h3>
-            <p><strong>Description</strong> : Soft and Comfortable pillow</p>
-            <p><strong>Price</strong> : $149.99</p>
-            <p><strong>Avaibility</strong> : Out of Stock</p>
-            <img src="shopping (3).webp" alt="Pillow Image">
-            <a href="https://www.amazon.in/Wakefit-Hollow-Fiber-Pillow-Pieces/dp/B08T65ZNDV?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A1LJE4YE17OE1D">View Detail</a>
-            <ul>
-                <li><strong>Brand</strong> : WakeFit</li>
-                <li><strong>Colour</strong> : Faded White</li>
-                <li><strong>Dimension</strong> : 26 x 12 Inch</li>
-                <li><strong>Material</strong> : MicroFibre</li>
-            </ul>
+            <h2>Skills</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skills</th>
+                        <th>Experience</th>
+                        <th>Years of practice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Intermediate</td>
+                        <td>1 Month</td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>Intermediate</td>
+                        <td>3 Months</td>
+                    </tr>
+                    <tr>
+                        <td>Git & GitHub</td>
+                        <td>Intermediate</td>
+                        <td>2 Months</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
-    </div>
+
+        <!--This is Contact Form-->
+        <section id="contact">
+            <h2>Contact</h2>
+            <fieldset>
+                <legend>Contact Form</legend>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" placeholder="Enter Name" id="name" name="name" required>
+
+                    <label for="email">Email Id:</label>
+                    <input type="email" placeholder="Enter Email Id" id="email" name="email" required>
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" placeholder="Enter Subject" id="subject" name="subject" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </fieldset>
+        </section>
+    </main>
+
+    <!--This is Footer Section-->
+    <footer>
+        <p>Copyright &copy; 2025 Vedant Patel. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/vedant24279">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/vedant-patel-24274039443534513360/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
