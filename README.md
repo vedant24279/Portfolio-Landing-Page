@@ -1,2 +1,2 @@
 # Portfolio-Landing-Page
-I have learned the HTML and tried building the portfolio using chatgpt for CSS
+I have learned the HTML and CSS tried building the portfolio
